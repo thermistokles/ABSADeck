@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -60,8 +58,7 @@ public class User {
 	@Column(name = "last_update_dt")
 	private LocalDateTime last_update_dt ;
 	
-	@ManyToOne
-	@JoinColumn(name = "role")
-	private Role role;
+	@Column(name = "role", length = 500)
+	private String role;
 	
 }
