@@ -38,5 +38,44 @@
 	</div>
 </div>
 
+<div class="tab">
+	<button class="tablink" onclick="openPage('existing-users', this)" id="defaultOpen">EXISTING USERS</button>
+	<button class="tablink" onclick="openPage('new-users', this)">NEW USERS</button>
+	<button class="tablink" onclick="openPage('rejected-users', this,)">REJECTED USERS</button>
+</div>
+
+
+<div id="existing-users" class="tabcontent">
+
+</div>
+
+<div id="new-users" class="tabcontent">
+
+</div>
+
+<div id="rejected-users" class="tabcontent">
+
+</div>
+
+<script>
+function openPage(pageName, elmnt) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  //elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+
 </body>
 </html>

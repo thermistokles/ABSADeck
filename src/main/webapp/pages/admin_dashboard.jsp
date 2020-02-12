@@ -116,7 +116,8 @@ body {font-family: Arial;}
       <tr class="info">
      
    <td>${authorisedUserDetails.absaId} </td>  
-   <td>${authorisedUserDetails.brId} </td>     
+   <td>${authorisedUserDetails.firstName} &nbsp; ${authorisedUserDetails.lastName}</td>
+   <td>${authorisedUserDetails.}</td>     
    <td>${authorisedUserDetails.email}</td>  
    <td>${authorisedUserDetails.userType }</td>  
            

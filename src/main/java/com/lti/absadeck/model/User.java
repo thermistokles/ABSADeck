@@ -30,6 +30,18 @@ public class User {
 	@Column(name = "br_id", length = 9)
 	private String brId;
 	
+	@Column(name = "first_name", length = 30)
+	private String firstName;
+	
+	@Column(name = "last_name", length = 30)
+	private String lastName;
+	
+	@Column(name = "mobile_no", length = 20)
+	private String mobileNo;
+	
+	@Column(name = "desk_phone", length = 20)
+	private String deskPhone;
+	
 	@Column(name = "email", length = 100)
 	private String email;
 	
