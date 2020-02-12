@@ -37,9 +37,32 @@ public class LoginController {
 		 
 		 User user = loginRef.authenticate(login_details.getAbsaId());
 		 
-		 if(user.getAbsaId().equals(login_details.getAbsaId()) && user.getPassword().equals(login_details.getPassword())) {
+		 if(user==null) {
+			 mv.addObject("login_status","User Not Found");
+			 mv.setViewName("home");
+		 }
+		 
+		 else if(user.getAbsaId().equals(login_details.getAbsaId()) && user.getPassword().equals(login_details.getPassword())) {
 			 mv.addObject("user_details", login_details);
-			 mv.setViewName("admin_dashboard");
+			 
+			 
+			// mv.setViewName("admin_dashboard");
+
+			 
+			
+			  if(user.getRole().charAt(0)=='1') mv.setViewName("admin_dashboard");
+			  else  if(user.getRole().charAt(0)=='0') { 
+				  mv.setViewName("user_dashboard");
+			  
+			  }
+			 
+			 
+		 }
+		 else {
+			 mv.addObject("login_status","Invalid Credential");
+			 mv.setViewName("home");
+ 
+			 
 		 }
 	
 		 
