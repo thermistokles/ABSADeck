@@ -1,5 +1,7 @@
 package com.lti.absadeck.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,12 +11,17 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lti.absadeck.model.Login;
 import com.lti.absadeck.model.User;
 import com.lti.absadeck.services.LoginService;
+import com.lti.absadeck.services.UserService;
 
 @Controller
 public class LoginController {
 
 	@Autowired
 	LoginService loginRef;
+
+	
+	 @Autowired	
+	  UserService userser;
 
 	
 	 @RequestMapping("/")
@@ -50,8 +57,25 @@ public class LoginController {
 
 			 
 			
-			  if(user.getRole().charAt(0)=='1') mv.setViewName("admin_dashboard");
-			  else  if(user.getRole().charAt(0)=='0') { 
+			  if(user.getRole().charAt(0)=='1') {mv.setViewName("admin_dashboard");
+			  
+			
+			 	 List<User> pendinguser = userser.findApproval();
+			 	 List<User> authoriseduser = userser.findAuthorised();
+			 	 List<User> rejecteduser = userser.findRejected();
+			 	 mv.addObject("pendinguser", pendinguser);
+			 	 mv.addObject("authoriseduser", authoriseduser);
+			 	 mv.addObject("rejecteduser", rejecteduser);
+			 	 
+			 	 
+			 	 System.out.println("Pending Users : "+pendinguser);
+			 	 System.out.println("Authorized Users : "+authoriseduser);
+			 	 System.out.println("Rejected Users : "+rejecteduser);
+
+			 	 
+			  
+			  
+			  }			  else  if(user.getRole().charAt(0)=='0') { 
 				  mv.setViewName("user_dashboard");
 			  
 			  }
