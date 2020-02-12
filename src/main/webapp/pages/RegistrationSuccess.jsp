@@ -1,0 +1,1 @@
+<h1>Your Application has been submitted. Please wait for admin to approve your application</h1>
