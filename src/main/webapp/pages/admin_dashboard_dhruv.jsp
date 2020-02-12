@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-<link href="/css/admin_dashboard.css" rel="stylesheet">
+<link href="/css/admin_dashboard_dhruv.css" rel="stylesheet">
 </head>
 <body>
 <header>
