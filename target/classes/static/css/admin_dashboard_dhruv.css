@@ -1,18 +1,117 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans&display=swap');
-/* HEADER */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:400,500,600,700&display=swap');
 
-header {
-	
-	position: absolute;
-	width: 100%;
-	height: 6.33vh;
-	left: 0px;
-	top: 0px;
+:root {
+	--wrapper_color: #fff;
+	--bg-color: #E5E5E5;
 
-	background: #870A3C;
+	--maroon1: #870A3C; /* Primary brand color */
+	--maroon2: #640032; /* Secondary accent color */
+	--maroon3: rgba(100, 0, 50, 0.15); /* Row and Filter bg color */
+
+	--svg_icon_color: invert(100%) sepia(1%) saturate(6629%) hue-rotate(233deg) brightness(104%) contrast(100%); /* White*/
+	--svg_icon_color_hover: invert(10%) sepia(48%) saturate(6701%) hue-rotate(325deg) brightness(97%) contrast(99%); /* maroon1 */
 }
 
-/* Abza Deck Administration */
+html, body {
+	height: 100%;
+	background-color: var(--bg-color);
+}
+
+body {
+	margin: 0;
+	font-family: Montserrat, "Lato Medium", Calibri;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+.wrapper {
+	width: 100%;
+	max-width: 90rem;
+	min-height: 56.25rem;
+	margin: 0 auto;
+	background-color: var(--wrapper_color);
+	border-left: 1px solid #C4C4C4;
+	border-right: 1px solid #C4C4C4;
+	box-sizing: border-box;
+}
+
+.inner {
+	width: 100%;
+	max-width: 77.25rem;
+	margin: 0 auto;
+	height: inherit;
+}
+
+.header-inner {
+	width: 100%;
+	max-width: 87.1875rem;
+	margin: 0 auto;
+	height: inherit;
+}
+
+.head-align {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header {
+	width: 100%;
+	min-height: 3.5625rem;
+	background-color: var(--maroon1);
+}
+
+.logo {
+	font-family: Montserrat;
+	font-size: 1.875rem;
+	font-weight: 400;
+	color: #fff;
+	line-height: 3.5625rem;
+}
+
+.navitems {
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 400;
+	color: #fff;
+	line-height: 1.5625rem;
+	display: flex;
+	align-items: center;
+}
+
+.navitems a{
+	padding: 0.9875rem;
+	/*margin: 0.6875rem;*/
+}
+
+.navitems span {
+	font-weight: 700;
+}
+
+.navitems a:hover {
+	color: var(--maroon1);
+	background: #fff;
+}
+
+.logouticon {
+	width: 1.5625rem;
+	height: 1.5625rem;
+	display: flex;
+	align-items: center;
+	filter: var(--svg_icon_color);
+}
+
+a.logout:hover .logouticon {
+	filter: var(--svg_icon_color_hover);
+}
+
+
+/* HEADER */
+/*
+
+!* Abza Deck Administration *!
 
 #website-name {
 	position: absolute;
@@ -31,7 +130,7 @@ header {
 }
 
 
-/* WELCOME, Dhruv_Adm */
+!* WELCOME, Dhruv_Adm *!
 
 .user-name {
 	position: absolute;
@@ -60,7 +159,7 @@ a {
 }
 
 
-/* CHANGE PASSWORD */
+!* CHANGE PASSWORD *!
 
 .change-password {
 	position: absolute;
@@ -79,7 +178,7 @@ a {
 }
 
 
-/* logout 1 */
+!* logout 1 *!*/
 
 .logout-icon {
 	/*background: url("/icons/logout.svg") no-repeat;*/
@@ -97,13 +196,9 @@ a {
 /* BREADCRUM */
 
 .breadcrum {
-	position: absolute;
 	width: 100%;
-	height: 2.222vh;
-	left: 0px;
-	top: 6.33vh;
-
-	background: #640032;
+	height: 1.25rem;
+	background: var(--maroon2);
 }
 
 /* Dashboard > Users */
