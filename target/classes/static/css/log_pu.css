@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans&display=swap');
+.body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #870A3C;
+}
+
+
+.topnav a {
+  float: left;
+  color: #870A3C;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: #870A3C;
+  color: #870A3C;
+}
+
+.topnav a.active {
+  background-color: #870A3C;
+  color: white;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {
+border: 3px solid #870A3C;
+padding-left:16px;
+padding-right: 27px;
+width: 50%;
+height: 100%;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffb3b3;
+  text-decoration: none;
+  font-size: 10px;
+  color: white;
+width: 40%;
+height: 100%;
+}
+
+button {
+  background-color: #870A3C;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 10px;
+  color: white;
+  width: 20%;
+  height: 50%;
+text-color: #870A3C;
+  
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 20px;
+padding-top:2px;
+
+}
+.cont {
+text-decoration: none;
+  font-size: 11px;
+  color: white;
+padding-left:20px;
+padding-right: 20px;
+
+}
+
+.fo {
+text-decoration: none;
+  font-size: 11px;
+  color: black;
+}
+span.psw {
+  float: right;
+  padding-top: 10px;
+}
+.login
+{
+text-decoration: none;
+  font-size: 11px;
+  color: white;
+padding-left:130px;
+padding-right:10px;
+}
+
+.contn {
+text-decoration: none;
+  font-size: 11px;
+  color: white;
+padding-top:20px;
+padding-left:10px;
+padding-right: 20px;
+width: 200px;
+
+
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+text-decoration: none;
+  font-size: 11px;
+     display: block;
+     float: none;
+padding-left:12px;
+padding-right:10px;
+
+  }
+ 
+}
