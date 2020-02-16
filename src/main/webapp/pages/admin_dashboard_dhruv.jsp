@@ -20,7 +20,7 @@
 					<div class="logo">Abza Deck Administration</div>
 
 					<nav class="navitems">
-						<a href="#">WELCOME, <span>Dhruv Bindoria<%--${userDetails.firstName} &nbsp; ${userDetails.lastName}--%></span></a>
+						<a href="#">WELCOME, <span>Dhruv Bindoria<!-- ${userDetails.firstName} &nbsp; ${userDetails.lastName} --></span></a>
 						<a href="#">CHANGE PASSWORD</a>
 						<a class="logout" href="#"><img class="logouticon" src="/icons/logout.svg" alt="logout icon"></a>
 					</nav>
@@ -34,6 +34,23 @@
 				</div>
 			</div>
 		</header>
+
+		<main>
+			<div class="body-inner">
+				<h1 class="page-title">Dashboard<!-- ${object.titlename} --></h1>
+				
+				<div class="action-bar">
+					<div class="search-bar">
+						
+					</div>
+
+					<div class="actions">
+						<a href="#" class="primary-button create-user"><img src="/icons/">Create User</a>
+						<a href="#" class="secondary-button delete-user">Delete (0) Selected</a>
+					</div>
+				</div>
+			</div>
+		</main>
 
 	<!--
 		<header>
