@@ -7,6 +7,7 @@
 	--maroon1: #870A3C; /* Primary brand color */
 	--maroon2: #640032; /* Secondary accent color */
 	--maroon3: rgba(100, 0, 50, 0.15); /* Row and Filter bg color */
+	--maroon4: #511533; /* Table text */
 
 	--svg_icon_color: invert(100%) sepia(1%) saturate(6629%) hue-rotate(233deg) brightness(104%) contrast(100%); /* White*/
 	--svg_icon_color_invert: invert(10%) sepia(48%) saturate(6701%) hue-rotate(325deg) brightness(97%) contrast(99%); /* maroon1 */
@@ -192,6 +193,10 @@ a.logout:hover .logouticon {
 	color: #fff;
 }
 
+.primary-btn:hover {
+	background-color: var(--maroon1);
+}
+
 .secondary-btn {
 	border: 0.0625rem solid var(--maroon2);
 	box-sizing: border-box;
@@ -241,4 +246,62 @@ a.logout:hover .logouticon {
 .tab button.active {
 	transform: scale(0.99);
 	background-color: var(--maroon1);
+}
+
+table {
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	text-align: left;
+	border: none;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+thead {
+	background-color: var(--maroon1);
+	color: #fff;
+	font-weight: var(--montserrat_bold);
+	padding-left: 2.625rem;
+}
+
+th, td {
+	height: 2.5rem;
+}
+
+.checkbox {
+	-webkit-appearance: none;
+	background-color: #fff;
+	border: none;
+	width: 0.875rem;
+	height: 0.875rem;
+	margin: 0 0.875rem;
+	border-radius: 3px;
+}
+
+
+	.regular-checkbox:checked {
+		border: 1px solid var(--maroon2);
+	}
+
+
+	.regular-checkbox:checked:after {
+		content: '\2714';
+		font-size: 14px;
+		top: 0px;
+		left: 3px;
+		color: var(--maroon2);
+	}
+
+tbody {
+	font-family: "Lato Medium";
+	color: var(--maroon4);
+	background-color: var(--maroon3);
+}
+
+table tr {
+    border-bottom: 1px solid white;
+}​
+
+table tr:last-child { 
+    border-bottom: none; 
 }

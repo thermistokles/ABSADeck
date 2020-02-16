@@ -47,7 +47,7 @@
 						</div>
 	
 						<div class="actions">
-							<a href="#" class="btn primary-btn create-user"><img src="/icons/add_user.svg" alt="adduser">Create User</a>
+							<a href="/registration" class="btn primary-btn create-user"><img src="/icons/add_user.svg" alt="adduser">Create User</a>
 							<a href="#" class="btn secondary-btn delete-user"><img src="/icons/delete.svg"> Delete (0) Selected</a>
 						</div>
 					</div>
@@ -59,19 +59,40 @@
 
 					<div id="existing-users" class="tabcontent">
 						<table>
+							<thead class="bg-primary">
+								<tr><th><input type="checkbox" id="" name="" value="" class="checkbox"></th><th>AB ID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
+							</thead >
+							<tbody>
+							<c:forEach var="authorisedUserDetails" items="${authoriseduser}">
+								<tr class="info">
 
+									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
+									<td>${authorisedUserDetails.absaId} </td>
+									<td>${authorisedUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${authorisedUserDetails.mobileNo}</td>
+									<td>${authorisedUserDetails.deskPhone }</td>
+									<td>${authorisedUserDetails.email }</td>
+									<td>${authorisedUserDetails.role }</td>
+									<td>${authorisedUserDetails.last_update_dt }</td>
+
+								</tr>
+							</c:forEach>
+
+
+							</tbody>
 						</table>
 					</div>
 
 					<div id="new-users" class="tabcontent">
 						<table>
 							<thead class="bg-primary">
-								<tr><th>ABID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
+								<tr><th><input type="checkbox" id="" name="" value="" class="checkbox"></th><th>AB ID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
 							</thead >
 							<tbody>
 							<c:forEach var="pendingUserDetails" items="${pendinguser}">
 								<tr class="info">
 
+									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
 									<td>${pendingUserDetails.absaId} </td>
 									<td>${pendingUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
 									<td>${pendingUserDetails.mobileNo}</td>
@@ -90,7 +111,27 @@
 
 					<div id="rejected-users" class="tabcontent">
 						<table>
+							<thead class="bg-primary">
+								<tr><th><input type="checkbox" id="" name="" value="" class="checkbox"></th><th>AB ID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
+							</thead >
+							<tbody>
+							<c:forEach var="rejectedUserDetails" items="${rejecteduser}">
+								<tr class="info">
 
+									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
+									<td>${rejectedUserDetails.absaId} </td>
+									<td>${rejectedUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${rejectedUserDetails.mobileNo}</td>
+									<td>${rejectedUserDetails.deskPhone }</td>
+									<td>${rejectedUserDetails.email }</td>
+									<td>${rejectedUserDetails.role }</td>
+									<td>${rejectedUserDetails.last_update_dt }</td>
+
+								</tr>
+							</c:forEach>
+
+
+							</tbody>
 						</table>
 					</div>
 				</div>
