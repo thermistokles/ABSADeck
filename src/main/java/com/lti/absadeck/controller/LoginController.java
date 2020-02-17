@@ -57,7 +57,7 @@ public class LoginController {
 
 			 
 			
-			  if(user.getRole().charAt(0)=='1') {mv.setViewName("admin_dashboard");
+			  if(user.getRole().charAt(0)=='1') {mv.setViewName("admin_dashboard_dhruv");
 			  
 			
 			 	 List<User> pendinguser = userser.findApproval();
@@ -98,7 +98,7 @@ public class LoginController {
 	 @RequestMapping("/logout")
 	    public String logout(Model model) {
 	       // model.put("message", "HowToDoInJava Reader !!");
-	        return "home";
+	        return "login";
 	    }
 	 
 	 

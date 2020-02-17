@@ -24,7 +24,6 @@ public class LoginService {
 		
 		User user = loginRepo.findByAbsaId(absaid);
 		System.out.println("INSIDE SERVICE -"+user);
-
 			
 		return user;
 	}

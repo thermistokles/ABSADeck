@@ -27,8 +27,9 @@ public class User {
 	@Column(name = "absa_id", length = 7)
 	private String absaId;
 	
-	@Column(name = "br_id", length = 9)
-	private String brId;
+	/*
+	 * @Column(name = "br_id", length = 9) private String brId;
+	 */
 	
 	@Column(name = "first_name", length = 30)
 	private String firstName;
@@ -89,13 +90,11 @@ public class User {
 		this.absaId = absaId;
 	}
 
-	public String getBrId() {
-		return brId;
-	}
-
-	public void setBrId(String brId) {
-		this.brId = brId;
-	}
+	/*
+	 * public String getBrId() { return brId; }
+	 * 
+	 * public void setBrId(String brId) { this.brId = brId; }
+	 */
 
 	public String getEmail() {
 		return email;
@@ -179,7 +178,7 @@ public class User {
 		super();
 		this.userId = userId;
 		this.absaId = absaId;
-		this.brId = brId;
+		//this.brId = brId;
 		this.email = email;
 		this.password = password;
 		this.userType = userType;
@@ -189,14 +188,6 @@ public class User {
 		this.last_login_dt = last_login_dt;
 		this.last_update_dt = last_update_dt;
 		this.role = role;
-	}
-
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", absaId=" + absaId + ", brId=" + brId + ", email=" + email + ", password="
-				+ password + ", userType=" + userType + ", isValid=" + isValid + ", isLoggedIn=" + isLoggedIn
-				+ ", loginAttemptCount=" + loginAttemptCount + ", last_login_dt=" + last_login_dt + ", last_update_dt="
-				+ last_update_dt + ", role=" + role + "]";
 	}
 
 
@@ -218,6 +209,15 @@ public class User {
 
 	public String getMobileNo() {
 		return mobileNo;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", absaId=" + absaId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", mobileNo=" + mobileNo + ", deskPhone=" + deskPhone + ", email=" + email + ", password=" + password
+				+ ", userType=" + userType + ", isValid=" + isValid + ", isLoggedIn=" + isLoggedIn
+				+ ", loginAttemptCount=" + loginAttemptCount + ", last_login_dt=" + last_login_dt + ", last_update_dt="
+				+ last_update_dt + ", role=" + role + "]";
 	}
 
 	public void setMobileNo(String mobileNo) {

@@ -244,6 +244,7 @@ body {
 </style>
 </head>
 
+    <body>
 
 <div class="topnav">
   <a class="active" href="#home">ABSA Deck Administration</a>
@@ -262,15 +263,11 @@ body {
 <div style="padding-left:16px;padding-right: 30px;">
   
   <div class="topnavt">
-  <a class="active" href="#home">Personal Info</a>
-  <a class="active" href="#home">Roles</a>
-  <a class="active" href="#home">Permissions</a>
+  <a class="active" onclick="openTab(event, 'request')" id="defaultOpen">Personal Info</a>
+  <a class="active" onclick="openTab(event, 'existing')">Roles</a>
+  <a class="active" onclick="openTab(event, 'rejected')">Permissions</a>
   </div>
-  
-    <body>
-  
-  
-  
+ 
 
   <form action = "/registrationSubmit">
 <div class="center">
@@ -279,9 +276,9 @@ body {
     <label for="fname">ABSA ID</label>
     <input type="text" id="fname" name="absaId" placeholder="Your name..">
 </br>
-    <label for="lname">BRID</label>
+<!--     <label for="lname">BRID</label>
     <input type="text" id="lname" name="brId" placeholder="Your last name..">
-</br>
+</br> -->
 <label for="emailid">Email Id</label>
     <input type="text" id="email" name="email" placeholder="Your email id..">
 <!-- </br>
@@ -305,39 +302,87 @@ body {
 <label for="deskno">Desk Number</label>
     <input type="text" id="deskno" name="deskno" placeholder="Your Desk Number..">
      -->
+     <br>	
+    <label for="firstName">First Name</label>
+    <input type="text" id="fname" name="firstName" placeholder="Your first name..">
 </br>
+	
+    <label for="lastName">Last Name</label>
+    <input type="text" id="fname" name="lastName" placeholder="Your last name..">
+</br>
+
 <label for="pswd">Password</label>
     <input type="text" id="pswd" name="password" placeholder="Your Password..">
 </br>
-
-<!-- <label for="cpswd">Confirm Password</label>
-    <input type="text" id="cpswd" name="cpswd" placeholder="Confirm Password..">
-</br> -->
 </div>
+
+<div class="column1">
+	
+<form action="/action_page.php">
+  <p>Please select your User Type:</p>
+  <input type="radio" id="support" name="userType" value="S">
+  <label for="Support">Support</label><br>
+  <input type="radio" id="ltp" name="userType" value="L">
+  <label for="LTP">LTP</label><br>
+  <input type="radio" id="business" name="userType" value="B">
+  <label for="Business">Business</label>
+  
+  </div>
+  
+  <div class="column1">
+	
+<form action="/action_page.php">
+<p>Please select your Roles:</p>
+  <input type="checkbox" id="role" name="role" value="DM">
+  <label for="vehicle1">DM</label><br>
+  <input type="checkbox" id="role" name="role" value="DMHC">
+  <label for="vehicle2"> SOD Health Check</label><br>
+  <input type="checkbox" id="role" name="role" value="DMBS">
+  <label for="vehicle3"> Batch Monitoring</label><br><br>
+  
+  <input type="checkbox" id="role" name="role" value="KAMLS">
+  <label for="vehicle1"> KAMLS</label><br>
+  <input type="checkbox" id="role" name="role" value="KAMLSHC">
+  <label for="vehicle2"> SOD Health Check</label><br>
+  <input type="checkbox" id="role" name="role" value="KAMLSBS">
+  <label for="vehicle3"> Batch Monitoring</label><br><br>
+  
+  </div>
+  
  <input type="submit" class="app-button" id="btnClearSearch" align="center" value="Submit">
 
  </div>
   </form>
- 
-</body>  
+   
   
     </div>
   
 </div>
 
-
-
-
-
-
-
-
- 
-
- 
- 
- </div>
-
-
 </body>
+</body>
+
+<script>
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 </html>
