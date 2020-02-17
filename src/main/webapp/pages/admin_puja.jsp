@@ -45,8 +45,9 @@
   <figcaption>Business Users</figcaption>
 </figure>
 
-<div>
-    <input type="checkbox" value="">
+ <div>
+    <input type="radio" id="male" name="gender" value="male">
+  <label for="male"></label><br>
     </div>
   </div>
   
@@ -58,7 +59,8 @@
 </figure>
 
     <div>
-    <input type="checkbox" value="">
+    <input type="radio" id="male" name="gender" value="female">
+  <label for="female"></label><br>
   </div>
   </div>
   
@@ -69,7 +71,8 @@
 </figure>
 
     <div>
-    <input type="checkbox" value="">
+    <input type="radio" id="other" name="gender" value="other">
+  <label for="other"></label><br>
     </div>
   </div>
   
