@@ -31,6 +31,9 @@ public class UserService {
 		// TODO Auto-generated method stub
 		return userrepo.findRejected();
 	}
-	
-	
+
+
+    public User findByABID(String id) {
+		return userrepo.findByAbsaId(id);
+    }
 }

@@ -8,6 +8,7 @@
 	--maroon2: #640032; /* Secondary accent color */
 	--maroon3: rgba(100, 0, 50, 0.15); /* Row and Filter bg color */
 	--maroon4: #511533; /* Table text */
+	--maroon5: rgba(100, 0, 50, 0.3); /* Table row highlight color */
 
 	--svg_icon_color: invert(100%) sepia(1%) saturate(6629%) hue-rotate(233deg) brightness(104%) contrast(100%); /* White*/
 	--svg_icon_color_invert: invert(10%) sepia(48%) saturate(6701%) hue-rotate(325deg) brightness(97%) contrast(99%); /* maroon1 */
@@ -266,6 +267,22 @@ thead {
 
 th, td {
 	height: 2.5rem;
+	max-width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 7.1875rem;
+	min-width: 2.625rem;
+	padding: 0 0.9375rem;
+}
+
+th:first-child, td:first-child {
+	width: 2.625rem;
+	padding: 0;
+}
+
+th:nth-child(2), td:nth-child(2) {
+	padding-left: 0;
 }
 
 .checkbox {
@@ -292,10 +309,11 @@ th, td {
 		color: var(--maroon2);
 	}
 
-tbody {
+table tbody tr{
 	font-family: "Lato Medium";
 	color: var(--maroon4);
 	background-color: var(--maroon3);
+	transition: 0.3s;
 }
 
 table tr {
@@ -304,4 +322,8 @@ table tr {
 
 table tr:last-child { 
     border-bottom: none; 
+}
+
+table tbody tr:hover {
+	background-color: var(--maroon5);
 }

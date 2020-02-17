@@ -1,44 +1,20 @@
-<!DOCTYPE html>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html lang="en">
+<%@include file="page_head.jsp"%>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="/css/admin_dashboard_dhruv.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:400,500,600,700&display=swap" rel="stylesheet">
-	<title>absadeck</title>
-</head>
 <body>
 
 	<div class="wrapper">
 
 		<header>
-			<div class="header">
-				<div class="header-inner head-align">
-					<div class="logo">Abza Deck Administration</div>
 
-					<nav class="navitems">
-						<a href="#">WELCOME, <span>Dhruv Bindoria<!-- ${userDetails.firstName} &nbsp; ${userDetails.lastName} --></span></a>
-						<a href="#">CHANGE PASSWORD</a>
-						<a class="logout" href="/logout"><img class="logouticon" src="/icons/logout.svg" alt="logout icon"></a>
-					</nav>
-				</div>
-			</div>
+			<%@include file="page_header.jsp" %>
 
+			<%@include file="page_breadcrum.jsp"%>
 
-			<div class="breadcrum">
-				<div class="header-inner">
-
-				</div>
-			</div>
 		</header>
 
 		<main>
 			<div class="body-inner">
-				<h1 class="page-title">Dashboard<!-- ${object.titlename} --></h1>
+				<%@include file="page_title.jsp"%>
 				
 				<div class="main-section">
 					<div class="action-bar">
@@ -66,9 +42,9 @@
 							<c:forEach var="authorisedUserDetails" items="${authoriseduser}">
 								<tr class="info">
 
-									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
+									<td><input type="checkbox" id="1" name="select-all" value="" class="checkbox"></td>
 									<td>${authorisedUserDetails.absaId} </td>
-									<td>${authorisedUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${authorisedUserDetails.firstName} ${authorisedUserDetails.lastName}</td>
 									<td>${authorisedUserDetails.mobileNo}</td>
 									<td>${authorisedUserDetails.deskPhone }</td>
 									<td>${authorisedUserDetails.email }</td>
@@ -85,16 +61,16 @@
 
 					<div id="new-users" class="tabcontent">
 						<table>
-							<thead class="bg-primary">
+							<thead>
 								<tr><th><input type="checkbox" id="" name="" value="" class="checkbox"></th><th>AB ID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
 							</thead >
 							<tbody>
 							<c:forEach var="pendingUserDetails" items="${pendinguser}">
-								<tr class="info">
+								<tr onclick="window.location='/edituser/${pendingUserDetails.absaId}'">
 
 									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
 									<td>${pendingUserDetails.absaId} </td>
-									<td>${pendingUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${pendingUserDetails.firstName} ${pendingUserDetails.lastName}</td>
 									<td>${pendingUserDetails.mobileNo}</td>
 									<td>${pendingUserDetails.deskPhone }</td>
 									<td>${pendingUserDetails.email }</td>
@@ -120,7 +96,7 @@
 
 									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
 									<td>${rejectedUserDetails.absaId} </td>
-									<td>${rejectedUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${rejectedUserDetails.firstName} ${pendingUserDetails.lastName}</td>
 									<td>${rejectedUserDetails.mobileNo}</td>
 									<td>${rejectedUserDetails.deskPhone }</td>
 									<td>${rejectedUserDetails.email }</td>
@@ -135,6 +111,7 @@
 						</table>
 					</div>
 				</div>
+
 
 				<div class="filter-section">
 
