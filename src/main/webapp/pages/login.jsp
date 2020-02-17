@@ -24,7 +24,7 @@
 <div class="fo">
 <h2>Login Form</h2>
 </div>
-<form action="/action_page.php" method="post">
+<form action="/login" method="post">
   
 <div style="padding-left:40px;padding-right:30px;">
 
@@ -32,11 +32,11 @@
   <div class="cont">
     <label for="uname"><b>Username</b></label>
     </div>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username" name="absaId" required>
 <div class="cont">
     <label for="psw"><b>Password</b></label>
     </div>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" required>
       <div class="login">  
     <button type="submit">Login</button>
 </div>
