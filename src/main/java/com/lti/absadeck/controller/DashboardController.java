@@ -53,7 +53,30 @@ public class DashboardController {
         mv.setViewName("edit_user");
 	    return mv;
     }
-	
+
+    @RequestMapping(value = "/saveuserdetails")
+    public ModelAndView saveUser(User user, ModelAndView mv) {
+
+        userser.save(user);
+        //need a mechanism here, to check if data successfully inserted or not.
+        //Also error and exception handling needs to be done.
+        //And logs as well..
+
+	    //set last_update_dt to current save time
+	    //mv.setViewName("edit_user"); //try returning to the editUser() method instead
+        return editUser(user.getAbsaId(), mv);
+    }
+
+    @RequestMapping(value = "/approveuser/{id}")
+    public ModelAndView approveUser(@PathVariable("id") String id, ModelAndView mv) {
+
+	    userser.approveUser(id);
+	    //set isValid to 1
+
+        return editUser(id, mv);
+    }
+
+
     @RequestMapping("/admin/roles")
     public String roles(Role rolesdets)
     {

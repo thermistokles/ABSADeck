@@ -1,6 +1,7 @@
 package com.lti.absadeck.services;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,4 +37,15 @@ public class UserService {
     public User findByABID(String id) {
 		return userrepo.findByAbsaId(id);
     }
+
+	public void save(User user) {
+		user.setLast_update_dt(LocalDateTime.now());
+		userrepo.save(user);
+	}
+
+	public void approveUser(String id) {
+		User user = userrepo.findByAbsaId(id);
+		user.setValid(1);
+		userrepo.save(user);
+	}
 }
