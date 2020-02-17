@@ -40,7 +40,7 @@
 							</thead >
 							<tbody>
 							<c:forEach var="authorisedUserDetails" items="${authoriseduser}">
-								<tr class="info">
+								<tr onclick="window.location='/edituser/${authorisedUserDetails.absaId}'">
 
 									<td><input type="checkbox" id="1" name="select-all" value="" class="checkbox"></td>
 									<td>${authorisedUserDetails.absaId} </td>
@@ -92,7 +92,7 @@
 							</thead >
 							<tbody>
 							<c:forEach var="rejectedUserDetails" items="${rejecteduser}">
-								<tr class="info">
+								<tr onclick="window.location='/edituser/${pendingUserDetails.absaId}'">
 
 									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
 									<td>${rejectedUserDetails.absaId} </td>
