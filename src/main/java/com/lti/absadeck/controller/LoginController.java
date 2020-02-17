@@ -27,7 +27,7 @@ public class LoginController {
 	 @RequestMapping("/")
 	    public String home(Model model) {
 	       // model.put("message", "HowToDoInJava Reader !!");
-	        return "home";
+	        return "login";
 	    }
 	 
 	 

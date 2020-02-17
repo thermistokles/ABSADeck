@@ -198,7 +198,37 @@ public class User {
 				+ ", loginAttemptCount=" + loginAttemptCount + ", last_login_dt=" + last_login_dt + ", last_update_dt="
 				+ last_update_dt + ", role=" + role + "]";
 	}
-	
-	
-	
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public String getDeskPhone() {
+		return deskPhone;
+	}
+
+	public void setDeskPhone(String deskPhone) {
+		this.deskPhone = deskPhone;
+	}
 }

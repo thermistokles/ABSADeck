@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 
 <head>
@@ -20,7 +21,7 @@
 					<div class="logo">Abza Deck Administration</div>
 
 					<nav class="navitems">
-						<a href="#">WELCOME, <span>Dhruv Bindoria<%--${userDetails.firstName} &nbsp; ${userDetails.lastName}--%></span></a>
+						<a href="#">WELCOME, <span>Dhruv Bindoria<!-- ${userDetails.firstName} &nbsp; ${userDetails.lastName} --></span></a>
 						<a href="#">CHANGE PASSWORD</a>
 						<a class="logout" href="#"><img class="logouticon" src="/icons/logout.svg" alt="logout icon"></a>
 					</nav>
@@ -35,57 +36,115 @@
 			</div>
 		</header>
 
+		<main>
+			<div class="body-inner">
+				<h1 class="page-title">Dashboard<!-- ${object.titlename} --></h1>
+				
+				<div class="main-section">
+					<div class="action-bar">
+						<div class="search-bar">
+							
+						</div>
+	
+						<div class="actions">
+							<a href="/registration" class="btn primary-btn create-user"><img src="/icons/add_user.svg" alt="adduser">Create User</a>
+							<a href="#" class="btn secondary-btn delete-user"><img src="/icons/delete.svg"> Delete (0) Selected</a>
+						</div>
+					</div>
+
+					<div class="tab">
+						<button class="tablink" onclick="openPage('existing-users', this)" id="defaultOpen">EXISTING USERS</button><button class="tablink" onclick="openPage('new-users', this)">NEW USERS</button><button class="tablink" onclick="openPage('rejected-users', this,)">REJECTED USERS</button>
+					</div>
+
+
+					<div id="existing-users" class="tabcontent">
+						<table>
+							<thead class="bg-primary">
+								<tr><th><input type="checkbox" id="" name="" value="" class="checkbox"></th><th>AB ID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
+							</thead >
+							<tbody>
+							<c:forEach var="authorisedUserDetails" items="${authoriseduser}">
+								<tr class="info">
+
+									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
+									<td>${authorisedUserDetails.absaId} </td>
+									<td>${authorisedUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${authorisedUserDetails.mobileNo}</td>
+									<td>${authorisedUserDetails.deskPhone }</td>
+									<td>${authorisedUserDetails.email }</td>
+									<td>${authorisedUserDetails.role }</td>
+									<td>${authorisedUserDetails.last_update_dt }</td>
+
+								</tr>
+							</c:forEach>
+
+
+							</tbody>
+						</table>
+					</div>
+
+					<div id="new-users" class="tabcontent">
+						<table>
+							<thead class="bg-primary">
+								<tr><th><input type="checkbox" id="" name="" value="" class="checkbox"></th><th>AB ID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
+							</thead >
+							<tbody>
+							<c:forEach var="pendingUserDetails" items="${pendinguser}">
+								<tr class="info">
+
+									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
+									<td>${pendingUserDetails.absaId} </td>
+									<td>${pendingUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${pendingUserDetails.mobileNo}</td>
+									<td>${pendingUserDetails.deskPhone }</td>
+									<td>${pendingUserDetails.email }</td>
+									<td>${pendingUserDetails.role }</td>
+									<td>${pendingUserDetails.last_update_dt }</td>
+
+								</tr>
+							</c:forEach>
+
+
+							</tbody>
+						</table>
+					</div>
+
+					<div id="rejected-users" class="tabcontent">
+						<table>
+							<thead class="bg-primary">
+								<tr><th><input type="checkbox" id="" name="" value="" class="checkbox"></th><th>AB ID</th><th>Name</th><th>Mobile</th><th>Desk Phone</th><th>Email Address</th><th>Role</th><th>Date Created</th></tr>
+							</thead >
+							<tbody>
+							<c:forEach var="rejectedUserDetails" items="${rejecteduser}">
+								<tr class="info">
+
+									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
+									<td>${rejectedUserDetails.absaId} </td>
+									<td>${rejectedUserDetails.firstName} &nbsp; ${pendingUserDetails.lastName}</td>
+									<td>${rejectedUserDetails.mobileNo}</td>
+									<td>${rejectedUserDetails.deskPhone }</td>
+									<td>${rejectedUserDetails.email }</td>
+									<td>${rejectedUserDetails.role }</td>
+									<td>${rejectedUserDetails.last_update_dt }</td>
+
+								</tr>
+							</c:forEach>
+
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="filter-section">
+
+				</div>
+				
+			</div>
+		</main>
+
 	<!--
-		<header>
-			<div id="website-name">Abza Deck Administration</div>
-			<div class="user-name">WELCOME, <b>Dhruv_Adm</b></div>
-			<div class="change-password"><a href="/change-passwrod">CHANGE PASSWORD</a></div>
-			<img src="/icons/logout.svg" class="logout-icon"/>
-		</header>
-		<div class="breadcrum">
-			<div class="breadcrum-text">Dashboard > Users</div>
-		</div>
-		<div class="page-title">Dashboard</div>
-		<div class="search-bar">
-			<div class="search-placeholder">Search...</div>
-			<div class="search-button"></div>
-			<img src="/icons/search.svg" class="search-icon">
-		</div>
-		<div class="create-user-btn">
-			<img src="/icons/add-user-button.svg" class="create-user-icon">
-		</div>
-		<div class="create-user-text">Create User</div>
 
-		<div class="user-tab-bar">
-			<div class="user-tab existing">
-				<div class="user-tab-text">EXISTING USERS</div>
-			</div>
-			<div class="user-tab new">
-				<div class="user-tab-text">NEW USERS</div>
-			</div>
-			<div class="user-tab rejected">
-				<div class="user-tab-text">REJECTED USERS</div>
-			</div>
-		</div>
-
-		<div class="tab">
-			<button class="tablink" onclick="openPage('existing-users', this)" id="defaultOpen">EXISTING USERS</button>
-			<button class="tablink" onclick="openPage('new-users', this)">NEW USERS</button>
-			<button class="tablink" onclick="openPage('rejected-users', this,)">REJECTED USERS</button>
-		</div>
-
-
-		<div id="existing-users" class="tabcontent">
-
-		</div>
-
-		<div id="new-users" class="tabcontent">
-
-		</div>
-
-		<div id="rejected-users" class="tabcontent">
-
-		</div>
 	-->
 	</div>
 
