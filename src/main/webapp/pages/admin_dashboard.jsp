@@ -89,7 +89,7 @@ body {font-family: Arial;}
       <tr class="info">
      
    <td>${pendingUserDetails.absaId} </td>  
-   <td>${pendingUserDetails.brId} </td>     
+   <%-- <td>${pendingUserDetails.brId} </td> --%>     
    <td>${pendingUserDetails.email}</td>  
    <td>${pendingUserDetails.userType }</td>  
            
@@ -108,7 +108,7 @@ body {font-family: Arial;}
 
  <table class=" table-striped table-dark table table-responsive table-hover  table-bordered text-center" >
     <thead class="bg-primary">
-    <tr><th>ABID</th><th>BRID</th><th>Email ID</th><th>User Type</th></tr>  
+    <tr><th>ABID</th><th>Email ID</th><th>User Type</th></tr>  
 
     </thead >
     <tbody>
@@ -137,7 +137,7 @@ body {font-family: Arial;}
 
  <table class=" table-striped table-dark table table-responsive table-hover  table-bordered text-center" >
     <thead class="bg-primary">
-    <tr><th>ABID</th><th>BRID</th><th>Email ID</th><th>User Type</th></tr>  
+    <tr><th>ABID</th><th>Email ID</th><th>User Type</th></tr>  
 
     </thead >
     <tbody>
@@ -145,7 +145,7 @@ body {font-family: Arial;}
       <tr class="info">
      
    <td>${rejectedUserDetails.absaId} </td>  
-   <td>${rejectedUserDetails.brId} </td>     
+   <%-- <td>${rejectedUserDetails.brId} </td> --%>     
    <td>${rejectedUserDetails.email}</td>  
    <td>${rejectedUserDetails.userType }</td>  
            

@@ -44,7 +44,7 @@
 
     <span class="psw"><a href="">Forgot Password?</a>
     <div>
-    <span class="psw"><a href="">Register</a></span>
+    <span class="psw"><a href="/registration">Register</a></span>
     </div>
     </span>
 </div>
