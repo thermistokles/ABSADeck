@@ -48,6 +48,7 @@ public class DashboardController {
         mv.addObject("title", title);
 
         User user = userser.findByABID(id);
+        mv.addObject("user", user);
 
         System.out.println(user);
         mv.setViewName("edit_user");
@@ -57,7 +58,7 @@ public class DashboardController {
     @RequestMapping(value = "/saveuserdetails")
     public ModelAndView saveUser(User user, ModelAndView mv) {
 
-        userser.save(user);
+        userser.update(user);
         //need a mechanism here, to check if data successfully inserted or not.
         //Also error and exception handling needs to be done.
         //And logs as well..
@@ -72,6 +73,15 @@ public class DashboardController {
 
 	    userser.approveUser(id);
 	    //set isValid to 1
+
+        return editUser(id, mv);
+    }
+
+    @RequestMapping(value = "/rejectuser/{id}")
+    public ModelAndView rejectUser(@PathVariable("id") String id, ModelAndView mv) {
+
+	    userser.rejectUser(id);
+	    //set isValid to 2
 
         return editUser(id, mv);
     }

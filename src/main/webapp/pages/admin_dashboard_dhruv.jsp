@@ -92,11 +92,11 @@
 							</thead >
 							<tbody>
 							<c:forEach var="rejectedUserDetails" items="${rejecteduser}">
-								<tr onclick="window.location='/edituser/${pendingUserDetails.absaId}'">
+								<tr onclick="window.location='/edituser/${rejectedUserDetails.absaId}'">
 
 									<td><input type="checkbox" id="" name="select-all" value="" class="checkbox"></td>
 									<td>${rejectedUserDetails.absaId} </td>
-									<td>${rejectedUserDetails.firstName} ${pendingUserDetails.lastName}</td>
+									<td>${rejectedUserDetails.firstName} ${rejectedUserDetails.lastName}</td>
 									<td>${rejectedUserDetails.mobileNo}</td>
 									<td>${rejectedUserDetails.deskPhone }</td>
 									<td>${rejectedUserDetails.email }</td>

@@ -38,14 +38,25 @@ public class UserService {
 		return userrepo.findByAbsaId(id);
     }
 
-	public void save(User user) {
-		user.setLast_update_dt(LocalDateTime.now());
-		userrepo.save(user);
-	}
-
 	public void approveUser(String id) {
 		User user = userrepo.findByAbsaId(id);
 		user.setValid(1);
+		userrepo.save(user);
+	}
+
+	public void update(User user) {
+
+		//work under progress
+		/*User dbuser = userrepo.findByAbsaId(user.getAbsaId());
+		dbuser.setAbsaId(user.getAbsaId());
+		dbuser.
+				dbuser.setLast_update_dt(LocalDateTime.now());
+		userrepo.save(user);*/
+	}
+
+	public void rejectUser(String id) {
+		User user = userrepo.findByAbsaId(id);
+		user.setValid(2);
 		userrepo.save(user);
 	}
 }

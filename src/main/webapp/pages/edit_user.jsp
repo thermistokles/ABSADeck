@@ -23,30 +23,53 @@
                     </div>
 
                     <div class="actions">
-                        <a href="/registration" class="btn primary-btn create-user"><img src="/icons/add_user.svg" alt="adduser">Approve User</a>
-                        <a href="#" class="btn secondary-btn delete-user"><img src="/icons/delete.svg">Reject User</a>
+                        <a href="/approveuser/${user.absaId}" class="btn primary-btn create-user"><img src="/icons/approve.svg" alt="adduser">Approve User</a>
+                        <a href="/rejectuser/${user.absaId}" class="btn secondary-btn delete-user"><img src="/icons/reject.svg">Reject User</a>
                     </div>
                 </div>
+
 
                 <div class="tab">
                     <button class="tablink" onclick="openPage('existing-users', this)" id="defaultOpen">USER DETAILS</button><button class="tablink" onclick="openPage('new-users', this)">ROLES</button><button class="tablink" onclick="openPage('rejected-users', this,)">PERMISSIONS</button>
                 </div>
 
+                <form <%--action="/saveuserdetails"--%>>
+                    <div id="existing-users" class="tabcontent">
+                        <label for="fname">ABSA ID</label>
+                        <input type="text" id="fname" name="absaId" value="${user.absaId}">
 
-                <div id="existing-users" class="tabcontent">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstName" value="${user.firstName}">
+
+                        <label for="fname">Last Name</label>
+                        <input type="text" id="lname" name="lastName" value="${user.lastName}">
+
+                        <label for="fname">Mobile</label>
+                        <input type="text" id="mobno" name="mobileNo" value="${user.mobileNo}">
+
+                        <label for="fname">Desk Phone</label>
+                        <input type="text" id="deskphone" name="deskPhone" value="${user.deskPhone}">
+
+                        <label for="fname">Email</label>
+                        <input type="text" id="email" name="email" value="${user.email}">
+
+                        <label for="fname">Date edited</label>
+                        <input type="text" id="lud" name="last_update_dt" value="${user.last_update_dt}">
+
+                    </div>
+
+                    <div id="new-users" class="tabcontent">
 
 
-                </div>
+                    </div>
 
-                <div id="new-users" class="tabcontent">
-
-
-                </div>
-
-                <div id="rejected-users" class="tabcontent">
+                    <div id="rejected-users" class="tabcontent">
 
 
-                </div>
+                    </div>
+
+                    <input type="submit">
+                </form>
             </div>
 
         </div>
