@@ -25,4 +25,6 @@ public interface UserRepository extends JpaRepository<User,String> {
 	@Query(value = "SELECT * FROM users u WHERE u.is_valid = '2'",
             nativeQuery=true)
       List<User> findRejected();
+
+    User findByAbsaId(String id);
 }

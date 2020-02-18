@@ -1,6 +1,7 @@
 package com.lti.absadeck.services;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,31 @@ public class UserService {
 		// TODO Auto-generated method stub
 		return userrepo.findRejected();
 	}
-	
-	
+
+
+    public User findByABID(String id) {
+		return userrepo.findByAbsaId(id);
+    }
+
+	public void approveUser(String id) {
+		User user = userrepo.findByAbsaId(id);
+		user.setValid(1);
+		userrepo.save(user);
+	}
+
+	public void update(User user) {
+
+		//work under progress
+		/*User dbuser = userrepo.findByAbsaId(user.getAbsaId());
+		dbuser.setAbsaId(user.getAbsaId());
+		dbuser.
+				dbuser.setLast_update_dt(LocalDateTime.now());
+		userrepo.save(user);*/
+	}
+
+	public void rejectUser(String id) {
+		User user = userrepo.findByAbsaId(id);
+		user.setValid(2);
+		userrepo.save(user);
+	}
 }
