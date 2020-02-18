@@ -36,13 +36,13 @@ public class RegistrationController {
 		
 		//Split Roles
 		List<String> list = Arrays.asList(user_details.getRole().split(","));
-		
+				
 		System.out.println("list of roles:"+list);
 		
 		String roleString = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 		
 		System.out.println("RoleService.fetchRole:"+roleService.fetchRole());
-		
+				
 		//Check if the user exists
 		User user = registrationService.findByAbsaId(user_details.getAbsaId());
 		
@@ -77,7 +77,8 @@ public class RegistrationController {
 		return modelAndView;
 	}
 	
-	public String replaceChar(String str, char ch, int index) {
+	public static String replaceChar(String str, char ch, int index) {
+		System.out.println("Character "+(index)+" will be replaced in the string.");
 	    StringBuilder myString = new StringBuilder(str);
 	    myString.setCharAt(index, ch);
 	    return myString.toString();
@@ -88,8 +89,10 @@ public class RegistrationController {
 			for(Role r : roleService.fetchRole()) {
 				
 				System.out.println("l.roleSelected:"+l);
-				if(l == r.getRoleAssigned()) {
-					replaceChar(roleString, '1', r.getRolePosition());
+				System.out.println("Rolessigned: "+r.getRoleAssigned());
+				if(l.equals(r.getRoleAssigned())) {
+					System.out.println("Match found for "+r.getRoleAssigned());
+					roleString = replaceChar(roleString, '1', r.getRolePosition());
 					break;
 				}
 			}
