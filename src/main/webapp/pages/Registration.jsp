@@ -318,8 +318,8 @@ body {
 
 <div class="column1">
 	
-<form action="/action_page.php">
-  <p>Please select your User Type:</p>
+<!-- <form action="/action_page.php">
+ -->  <p>Please select your User Type:</p>
   <input type="radio" id="support" name="userType" value="S">
   <label for="Support">Support</label><br>
   <input type="radio" id="ltp" name="userType" value="L">
@@ -331,20 +331,20 @@ body {
   
   <div class="column1">
 	
-<form action="/action_page.php">
+<!-- <form action="/action_page.php"> -->
 <p>Please select your Roles:</p>
   <input type="checkbox" id="role" name="role" value="DM">
   <label for="vehicle1">DM</label><br>
-  <input type="checkbox" id="role" name="role" value="DMHC">
+  <input type="checkbox" id="role" name="role" value="12">
   <label for="vehicle2"> SOD Health Check</label><br>
-  <input type="checkbox" id="role" name="role" value="DMBS">
+  <input type="checkbox" id="role" name="role" value="78">
   <label for="vehicle3"> Batch Monitoring</label><br><br>
   
-  <input type="checkbox" id="role" name="role" value="KAMLS">
+  <input type="checkbox" id="role" name="role" value="Kamls">
   <label for="vehicle1"> KAMLS</label><br>
-  <input type="checkbox" id="role" name="role" value="KAMLSHC">
+  <input type="checkbox" id="role" name="role" value="5">
   <label for="vehicle2"> SOD Health Check</label><br>
-  <input type="checkbox" id="role" name="role" value="KAMLSBS">
+  <input type="checkbox" id="role" name="role" value="7">
   <label for="vehicle3"> Batch Monitoring</label><br><br>
   
   </div>
