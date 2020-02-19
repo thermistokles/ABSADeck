@@ -305,18 +305,26 @@ body {
      <br>	
     <label for="firstName">First Name</label>
     <input type="text" id="fname" name="firstName" placeholder="Your first name..">
-</br>
+<br>
 	
     <label for="lastName">Last Name</label>
     <input type="text" id="fname" name="lastName" placeholder="Your last name..">
-</br>
+<br>
 
 <label for="pswd">Password</label>
     <input type="text" id="pswd" name="password" placeholder="Your Password..">
-</br>
-</div>
 
-<div class="column1">
+<!-- <label for="last_update_dt">Last_upadte:</label>
+    <button type="button" id="pswd" align="left" name="last_update_dt" onclick="this.form.timeField.value=getTimeStamp()" >Time</button> -->
+
+<input id="field" type="text" name="last_update_dt"  size="11" />
+<button type="button"  onload="setTime()" onclick="setTime();" s></button>
+
+</div>
+<br>
+<br>
+
+<div class="column2">
 	
 <!-- <form action="/action_page.php">
  -->  <p>Please select your User Type:</p>
@@ -332,9 +340,9 @@ body {
   <div class="column1">
 	
 <!-- <form action="/action_page.php"> -->
-<p>Please select your Roles:</p>
-  <input type="checkbox" id="role" name="role" value="DM">
-  <label for="vehicle1">DM</label><br>
+<p align="center">Please select your Roles:</p>
+  <input type="checkbox"  id="role" name="role" value="DM">
+  <label for="vehicle1" >DM</label><br>
   <input type="checkbox" id="role" name="role" value="12">
   <label for="vehicle2"> SOD Health Check</label><br>
   <input type="checkbox" id="role" name="role" value="78">
@@ -349,7 +357,7 @@ body {
   
   </div>
   
- <input type="submit" class="app-button" id="btnClearSearch" align="center" value="Submit">
+ <input type="submit" class="app-button"   id="btnClearSearch" align="center" value="Submit">
 
  </div>
   </form>
@@ -384,5 +392,19 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+
+
+
+function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                     + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+}
+function setTime() {
+    document.getElementById('field').value = getTimeStamp();
+}
+
 </script>
 </html>

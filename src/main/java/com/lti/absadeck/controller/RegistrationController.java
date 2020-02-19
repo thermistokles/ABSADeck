@@ -1,8 +1,11 @@
 package com.lti.absadeck.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
+import org.hibernate.type.LocalDateTimeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +24,7 @@ public class RegistrationController {
 	
 	@Autowired
 	RoleService roleService;
+	
 	
 	@RequestMapping("/registration")
 	public String registration(){
@@ -60,6 +64,7 @@ public class RegistrationController {
 			System.out.println("RoleString:"+roleString);
 			
 			user_details.setRole(roleString);
+			
 			
 			
 			registrationService.register(user_details);
