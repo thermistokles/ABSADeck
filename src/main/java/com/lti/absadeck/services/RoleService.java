@@ -17,4 +17,12 @@ public class RoleService {
 	public List<Role> fetchRole() {
 		return roleRepository.findAll();
 	}
+	
+	public List<Role> findUserRoles(){
+		return roleRepository.findUserRoles();
+	}
+	
+	public List<Role> findAll(){
+		return roleRepository.findAll();
+	}
 }

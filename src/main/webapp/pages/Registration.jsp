@@ -1,3 +1,6 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -305,21 +308,29 @@ body {
      <br>	
     <label for="firstName">First Name</label>
     <input type="text" id="fname" name="firstName" placeholder="Your first name..">
-</br>
+<br>
 	
     <label for="lastName">Last Name</label>
     <input type="text" id="fname" name="lastName" placeholder="Your last name..">
-</br>
+<br>
 
 <label for="pswd">Password</label>
     <input type="text" id="pswd" name="password" placeholder="Your Password..">
-</br>
-</div>
 
-<div class="column1">
+<!-- <label for="last_update_dt">Last_upadte:</label>
+    <button type="button" id="pswd" align="left" name="last_update_dt" onclick="this.form.timeField.value=getTimeStamp()" >Time</button> -->
+
+<input id="field" type="text" name="last_update_dt"  size="11" />
+<button type="button"  onload="setTime()" onclick="setTime();" s></button>
+
+</div>
+<br>
+<br>
+
+<div class="column2">
 	
-<form action="/action_page.php">
-  <p>Please select your User Type:</p>
+<!-- <form action="/action_page.php">
+ -->  <p>Please select your User Type:</p>
   <input type="radio" id="support" name="userType" value="S">
   <label for="Support">Support</label><br>
   <input type="radio" id="ltp" name="userType" value="L">
@@ -330,26 +341,38 @@ body {
   </div>
   
   <div class="column1">
+  
+  <c:forEach var="roles" items="${roles}">       
+      
+     
+   <%-- <td>${roles.getRolePosition()} </td>  
+   <td>${roles.getRoleAssigned()}</td>  --%>
+   
+   <input type="checkbox" id="role" name="role" value="${roles.getRoleAssigned()}">
+  <label for="vehicle2"> ${roles.getRoleAssigned()}</label><br> 
 	
-<form action="/action_page.php">
-<p>Please select your Roles:</p>
-  <input type="checkbox" id="role" name="role" value="DM">
-  <label for="vehicle1">DM</label><br>
-  <input type="checkbox" id="role" name="role" value="DMHC">
+<!-- <form action="/action_page.php"> -->
+<!-- <p align="center">Please select your Roles:</p>
+  <input type="checkbox"  id="role" name="role" value="DM">
+  <label for="vehicle1" >DM</label><br>
+  <input type="checkbox" id="role" name="role" value="12">
   <label for="vehicle2"> SOD Health Check</label><br>
-  <input type="checkbox" id="role" name="role" value="DMBS">
+  <input type="checkbox" id="role" name="role" value="78">
   <label for="vehicle3"> Batch Monitoring</label><br><br>
   
-  <input type="checkbox" id="role" name="role" value="KAMLS">
+  <input type="checkbox" id="role" name="role" value="Kamls">
   <label for="vehicle1"> KAMLS</label><br>
-  <input type="checkbox" id="role" name="role" value="KAMLSHC">
+  <input type="checkbox" id="role" name="role" value="5">
   <label for="vehicle2"> SOD Health Check</label><br>
-  <input type="checkbox" id="role" name="role" value="KAMLSBS">
-  <label for="vehicle3"> Batch Monitoring</label><br><br>
+  <input type="checkbox" id="role" name="role" value="7">
+  <label for="vehicle3"> Batch Monitoring</label><br><br> -->
+  
+  </tr> 
+   </c:forEach> 
   
   </div>
   
- <input type="submit" class="app-button" id="btnClearSearch" align="center" value="Submit">
+ <input type="submit" class="app-button"   id="btnClearSearch" align="center" value="Submit">
 
  </div>
   </form>
@@ -384,5 +407,19 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+
+
+
+function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                     + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+}
+function setTime() {
+    document.getElementById('field').value = getTimeStamp();
+}
+
 </script>
 </html>

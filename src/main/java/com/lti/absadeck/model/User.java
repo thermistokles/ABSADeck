@@ -1,6 +1,9 @@
 package com.lti.absadeck.model;
 
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -66,10 +69,10 @@ public class User {
 	@Column(name = "last_login_dt")
 	private LocalDateTime last_login_dt ;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
 	@Column(name = "last_update_dt")
-	private LocalDateTime last_update_dt ;
+	private LocalDate last_update_dt;
 	
 	@Column(name = "role", length = 500)
 	private String role;
@@ -152,12 +155,12 @@ public class User {
 		this.last_login_dt = last_login_dt;
 	}
 
-	public LocalDateTime getLast_update_dt() {
+	public LocalDate getLast_update_dt() {
 		return last_update_dt;
 	}
 
-	public void setLast_update_dt(LocalDateTime last_update_dt) {
-		this.last_update_dt = last_update_dt;
+	public void setLast_update_dt(LocalDate date) {
+		this.last_update_dt = date;
 	}
 
 	public String getRole() {
@@ -173,7 +176,7 @@ public class User {
 	}
 
 	public User(int userId, String absaId, String brId, String email, String password, String userType, int isValid,
-			boolean isLoggedIn, int loginAttemptCount, LocalDateTime last_login_dt, LocalDateTime last_update_dt,
+			boolean isLoggedIn, int loginAttemptCount, LocalDateTime last_login_dt, LocalDate last_update_dt,
 			String role) {
 		super();
 		this.userId = userId;

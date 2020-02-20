@@ -1,5 +1,8 @@
 package com.lti.absadeck.services;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,9 @@ public class RegistrationService {
     private RegistrationRepository registrationRepository;
 	
 	public User register(User user) {
+		 LocalDate date = LocalDate.now();
+			user.setLast_update_dt(date);
+			
 		registrationRepository.save(user);
 		
 		return user;
