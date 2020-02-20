@@ -60,6 +60,55 @@
 
                     <div id="new-users" class="tabcontent">
 
+<div class="screen">
+<div class="options">
+
+ <div class="admin"><span>
+ <figure>
+  <img src="/icons/administrator.svg" alt="Trulli" style="width:9.864375rem;height:12.866875‬rem;border:0;">
+  <figcaption align="center">ADMIN</figcaption>
+  <div class="alltabs">
+    <input type="radio" id="l1" name="role1" value="l1">
+  <label for="l1"></label><br>
+    </div>
+</figure>
+</span>
+    </div>
+
+<div class="ltp"><span>
+ <figure>
+  <img src="/icons/manager.svg" alt="Trulli" style="width:9.864375rem;height:12.866875‬rem;border:0;">
+  <figcaption align="center">LTP</figcaption>
+  <div class="alltabs">
+    <input type="radio" id="l1" name="role2" value="l2">
+  <label for="l2"></label><br>
+    </div>
+</figure>
+</span>
+    </div>
+
+    <div class="l1"><span>
+ <figure>
+  <img src="/icons/team.svg" alt="Trulli" style="width:9.864375rem;height:12.866875‬rem;border:0;">
+  <figcaption align="center">L1 Support</figcaption>
+  <div class="alltabs">
+    <input type="radio" id="l1" name="role3" value="l3">
+  <label for="l3"></label><br>
+    </div>
+</figure>
+</span>
+    </div>
+
+<div class="buttons">
+   <a href="#" class="active">BACK</a><span>
+   <a href="#" class="active">NEXT</a></span>
+ </div>
+
+</div>
+
+
+
+</div>
 
                     </div>
 

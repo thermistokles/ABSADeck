@@ -35,7 +35,7 @@ public class DashboardController {
         mv.addObject("authoriseduser", authoriseduser);
         mv.addObject("rejecteduser", rejecteduser);
 
-        mv.setViewName("admin_dashboard_dhruv");
+        mv.setViewName("edit_user");
 
         return mv;
     }
@@ -87,11 +87,11 @@ public class DashboardController {
     }
 
 
-    @RequestMapping("/admin/roles")
-    public String roles(Role rolesdets)
-    {
-    	return "admin_puja";
-    }
+//    @RequestMapping("/admin/roles")
+//    public String roles(Role rolesdets)
+//    {
+//    	return "edit_user";
+//    }
 
     @RequestMapping("/admin/permissions")
     public String permissions(Role permiss)
@@ -99,5 +99,7 @@ public class DashboardController {
 	return "admin_per_puja";
 }
 
+   
+    
 }
 
