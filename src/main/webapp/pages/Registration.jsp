@@ -1,3 +1,6 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -338,9 +341,18 @@ body {
   </div>
   
   <div class="column1">
+  
+  <c:forEach var="roles" items="${roles}">       
+      
+     
+   <%-- <td>${roles.getRolePosition()} </td>  
+   <td>${roles.getRoleAssigned()}</td>  --%>
+   
+   <input type="checkbox" id="role" name="role" value="${roles.getRoleAssigned()}">
+  <label for="vehicle2"> ${roles.getRoleAssigned()}</label><br> 
 	
 <!-- <form action="/action_page.php"> -->
-<p align="center">Please select your Roles:</p>
+<!-- <p align="center">Please select your Roles:</p>
   <input type="checkbox"  id="role" name="role" value="DM">
   <label for="vehicle1" >DM</label><br>
   <input type="checkbox" id="role" name="role" value="12">
@@ -353,7 +365,10 @@ body {
   <input type="checkbox" id="role" name="role" value="5">
   <label for="vehicle2"> SOD Health Check</label><br>
   <input type="checkbox" id="role" name="role" value="7">
-  <label for="vehicle3"> Batch Monitoring</label><br><br>
+  <label for="vehicle3"> Batch Monitoring</label><br><br> -->
+  
+  </tr> 
+   </c:forEach> 
   
   </div>
   

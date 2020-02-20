@@ -1,11 +1,8 @@
 package com.lti.absadeck.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
-import org.hibernate.type.LocalDateTimeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +24,17 @@ public class RegistrationController {
 	
 	
 	@RequestMapping("/registration")
-	public String registration(){
-		return "Registration";
+	public ModelAndView registration(){
+		ModelAndView modelAndView = new ModelAndView();
+		
+		//Print All roles from role table
+		System.out.println("roles: "+roleService.findUserRoles());
+		
+		//Return role information to registration page
+		modelAndView.addObject("roles", roleService.findUserRoles());
+		modelAndView.setViewName("Registration");
+		return modelAndView;
+		//return "Registration";
 	}
 	
 	@RequestMapping("/registrationSubmit")
