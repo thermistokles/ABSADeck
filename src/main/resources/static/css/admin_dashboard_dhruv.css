@@ -391,6 +391,7 @@ table tbody tr:hover {
     position: absolute;
     padding-left: 27.0625rem;
     padding-top: 15.625rem;
+   
     }
 
 .buttons span
@@ -403,6 +404,7 @@ table tbody tr:hover {
     box-shadow: 0px 15px 40px rgba(0,0,0,0.2);
     border-radius: 5px;
     color: #fff;
-   
+    font-size: 0.75‬rem;
     }
+
 
